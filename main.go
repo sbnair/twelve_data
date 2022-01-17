@@ -9,9 +9,6 @@ import (
 )
 
 func main() {
-//	cfg := config.GetAPIConfig()
-//	client := client.NewTradeMade(cfg.ClientURI)
-//	ctrl := controller.NewController(client)
         cfg := Conf{}  
         client := &fasthttp.Client{
 		ReadTimeout: 10000000,
@@ -31,9 +28,6 @@ func main() {
 	)
          
         logger := zerolog.New(os.Stderr).With().Timestamp().Logger()
-
-
-//        logger := log.Logger.New() 
             
         cli := NewCli(&cfg,client,&logger)
        
